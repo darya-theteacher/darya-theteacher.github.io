@@ -32,7 +32,7 @@ body {
 
 /* --- Общий контейнер для центрирования контента --- */
 .content-wrapper {
-    max-width: 960px; /* Максимальная ширина контента */
+    max-width: 1200px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирует блок по горизонтали */
     padding: 20px; /* Отступы по бокам */
     box-sizing: border-box;
@@ -183,7 +183,7 @@ body {
 
 .footer-content-wrapper {
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
