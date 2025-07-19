@@ -27,14 +27,14 @@ body {
     display: flex; /* Делаем body flex-контейнером */
     flex-direction: column; /* Элементы будут располагаться по вертикали */
     min-height: 100vh; /* Занимает всю высоту видимой части экрана */
-    font-size: 17px; /* Базовый размер шрифта для всего body */
+    font-size: 16px; /* Базовый размер шрифта для всего body */
 }
 
 /* --- Общий контейнер для центрирования контента --- */
 .content-wrapper {
     max-width: 1200px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирует блок по горизонтали */
-    padding: 70px 0px 40px 70px;
+    padding: 80px 0px 50px 70px;
     box-sizing: border-box;
     flex-grow: 1; /* Позволяет контенту занимать все доступное вертикальное пространство */
 }
@@ -56,7 +56,7 @@ body {
 .hero-text-block {
     flex: 1; /* Позволяет текстовому блоку занимать доступное пространство */
     min-width: 380px; /* Минимальная ширина для текстового блока */
-    max-width: 55%; /* Максимальная ширина для текстового блока */
+    max-width: 50%; /* Максимальная ширина для текстового блока */
     align-self: center; /* НОВОЕ: Центрируем этот блок по вертикали относительно родительского flex-контейнера */
 }
 
@@ -162,7 +162,7 @@ body {
     width: 400px; /* НОВОЕ: Фиксированный размер для клап-клап, чтобы оно задавало высоту */
     object-fit: contain; /* НОВОЕ: Убедимся, что изображение вписывается без обрезки */
     transform: none; /* Убран наклон */
-    margin-left: 50px; /* Отступ 50px от левого края блока hero-image-block */
+    margin-left: 40px; /* Отступ 50px от левого края блока hero-image-block */
     margin-right: 0; /* Убираем отступ справа */
 }
 
@@ -170,7 +170,7 @@ body {
 .main-footer {
     background-color: var(--footer-bg-gray);
     width: 100%;
-    padding: 15px 20px;
+    padding: 13px 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -180,7 +180,7 @@ body {
 
 .footer-content-wrapper {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1210px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -222,7 +222,7 @@ body {
     color: var(--primary-purple);
     border: none;
     padding: 5px 10px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Source Code Pro', monospace;
