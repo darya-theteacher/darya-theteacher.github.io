@@ -270,20 +270,30 @@ body {
         justify-content: center; /* Центрирование кнопок на мобильных */
     }
 
-    .hero-image-block {
-        order: 1;
-        max-width: 80%;
-        margin: 0 auto 30px;
-        width: 100%;
-        transform: translateX(0);
-        margin-top: 0;
-        right: 0;
-    }
+    /* ОБНОВЛЕНО: Картинка "Клап-Клап" */
+.hero-image-block {
+    flex-shrink: 0;
+    width: 40%; /* Уменьшаем ширину блока, чтобы он не занимал слишком много места */
+    display: flex;
+    /* justify-content: flex-start; /* Изменим на flex-start, но основной сдвиг будет через margin-left */
+    align-items: center;
+    margin-top: 0;
+    position: relative; /* Для позиционирования */
+    margin-left: 20%; /* НЕМНОГО СДВИГАЕМ ВПРАВО, чтобы левый край был около 3/5 */
+    /* Это значение в 20% - это отступ внутри hero-content.
+       Для того чтобы левый край был на 3/5 экрана, нужно более сложное абсолютное позиционирование,
+       или экспериментировать с процентами/vw здесь.
+       Попробуем так, если что, переделаем на absolute positioning. */
+}
 
-    .hero-image {
-        width: 100%;
-        transform: none; /* УБРАН наклон на мобильных */
-    }
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 100%; /* УМЕНЬШЕНО до 100% от размера родительского блока (.hero-image-block) */
+    transform: none; /* Убран наклон */
+    /* background-color: rgba(255, 0, 0, 0.2); /* Временный фон для отладки размера/позиции */
+}
 
     .greeting-image {
         width: 60%;
