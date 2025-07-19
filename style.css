@@ -57,226 +57,243 @@ body {
     flex: 1; /* Позволяет текстовому блоку занимать доступное пространство */
     min-width: 380px; /* Минимальная ширина для текстового блока */
     max-width: 55%; /* Максимальная ширина для текстового блока */
+    padding-top: 0;
 }
 
+/* ОБНОВЛЕНО: Картинка "Привет!" */
 .greeting-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 15px;
-    width: 70%; /* Размер "Привет!" */
+    margin-bottom: 0;
+    width: 40%; /* УМЕНЬШЕНО для меньшего размера, как на макете */
+    margin-left: 0; /* Без сдвига */
+    transform: none; /* УБРАН наклон */
 }
 
+/* ОБНОВЛЕНО: Основной текст */
 .main-text p {
     font-size: 1em; /* Относительно font-size body */
     text-align: left;
-    margin-bottom: 15px;
-    line-height: 1.8;
+    margin-bottom: 5px; /* УМЕНЬШЕНО для еще большей плотности */
+    line-height: 1.3; /* УМЕНЬШЕНО для 5 строк и плотности */
 }
 
 .main-text p:first-child {
-    margin-top: 0; /* Убираем лишний верхний отступ у первого параграфа */
+    margin-top: 0;
 }
 
 /* Стили для выделенного текста "useful, objective, and a little bit fun" */
 .highlight-text {
-    position: relative; /* Для позиционирования подчеркивания */
-    display: inline; /* Чтобы span внутри работал как inline */
-    line-height: 1.8; /* Передаем line-height из параграфа */
+    position: relative;
+    display: inline;
+    line-height: 1.3; /* Соответствует line-height параграфа */
 }
 
 .highlight-words {
-    font-weight: 700; /* Жирный */
-    font-style: italic; /* Курсив */
-    color: var(--primary-pink); /* Розовый цвет */
+    font-weight: 700;
+    font-style: italic;
+    color: var(--primary-pink);
     position: relative;
-    padding-bottom: 3px; /* Отступ для линии */
-    display: inline-block; /* Чтобы можно было применить padding и псевдоэлемент */
-    /* Z-index для того, чтобы подчеркивание было под текстом, если нужно */
-    z-index: 1; 
+    padding-bottom: 3px;
+    display: inline-block;
+    z-index: 1;
 }
 
-/* Стилизованное волнистое подчеркивание (обновлено для вашего SVG) */
+/* ОБНОВЛЕНО: Волнистое подчеркивание */
 .highlight-words::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%; /* Подчеркивание занимает 100% ширины текста */
-    height: 100%; /* Занимает всю высоту родителя, чтобы SVG мог масштабироваться */
-    z-index: -1; /* Помещаем под текст */
-    background-image: url('../assets/underline.svg'); /* Путь к вашему SVG */
-    background-repeat: no-repeat; /* Не повторять, так как это "длинная, уникальная волна" */
-    background-size: 100% 100%; /* Растянуть по всей ширине и высоте контейнера */
+    width: 100%;
+    height: 5px;
+    z-index: -1;
+    background-image: url('assets/underline.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     background-position: bottom;
 }
 
-
+/* ОБНОВЛЕНО: Расположение кнопок */
 .hero-buttons {
     display: flex;
-    justify-content: flex-start; /* Кнопки слева */
-    gap: 15px; /* Отступ между кнопками */
-    margin-top: 25px; /* Отступ сверху от текста */
+    justify-content: center; /* ЦЕНТРИРОВАНИЕ кнопок под текстом */
+    gap: 30px; /* УВЕЛИЧЕНО расстояние между кнопками */
+    margin-top: 30px; /* Отступ сверху от текста */
     flex-wrap: wrap; /* Для адаптивности */
 }
 
+/* ОБНОВЛЕНО: Размер кнопок */
 .button {
     background-color: var(--primary-pink);
     color: #ffffff;
     border: none;
-    padding: 8px 18px; /* Меньше padding, чем раньше, чтобы сделать кнопки компактнее */
-    font-size: 0.85em; /* Уменьшаем размер шрифта на кнопках */
+    padding: 7px 16px; /* УМЕНЬШЕНО padding для компактности */
+    font-size: 0.85em; /* УМЕНЬШЕНО размер шрифта на кнопках */
     cursor: pointer;
-    border-radius: 8px; /* Менее сильное скругление */
+    border-radius: 8px; /* УМЕНЬШЕНО скругление */
     font-family: 'Source Code Pro', monospace;
-    font-weight: normal; /* Нежирный шрифт */
-    text-transform: lowercase; /* Маленькие буквы */
-    transition: background-color 0.3s ease; /* Плавный переход цвета */
-    white-space: nowrap; /* Кнопки не переносятся */
-    text-decoration: none; /* Убираем подчеркивание у ссылки */
-    display: inline-flex; /* Для лучшего контроля над размерами и отступами */
+    font-weight: normal;
+    text-transform: lowercase;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
 .button:hover {
-    background-color: var(--primary-purple); /* Смена цвета при наведении */
+    background-color: var(--primary-purple);
 }
 
+/* ОБНОВЛЕНО: Картинка "Клап-Клап" */
 .hero-image-block {
     flex-shrink: 0;
     width: 45%; /* Блок для изображения */
     display: flex;
     justify-content: center; /* Центрируем изображение внутри блока */
-    align-items: flex-start; /* Выравниваем по верху */
-    margin-top: -30px; /* Поднимаем изображение выше, как на макете */
+    align-items: center; /* Выравниваем по центру вертикали, для выравнивания с текстом */
+    margin-top: 0; /* Сброс, чтобы выровнять по горизонтали */
+    position: relative;
+    right: 0; /* Без сдвига */
 }
 
 .hero-image {
     max-width: 100%;
     height: auto;
     display: block;
-    width: 180%; /* Делаем изображение больше */
-    transform: translateX(10%); /* Сдвигаем вправо, чтобы выглядело как на образце */
+    width: 220%; /* УВЕЛИЧЕНО для соответствия крупному размеру */
+    transform: none; /* УБРАН наклон */
+    /* Возможно, потребуется небольшое отрицательное значение margin-top/bottom для точного вертикального выравнивания */
 }
 
 /* --- Футер (Footer) --- */
 .main-footer {
-    background-color: var(--footer-bg-gray); /* Использование переменной с новым цветом */
+    background-color: var(--footer-bg-gray);
     width: 100%;
-    padding: 15px 20px; /* Отступы футера */
+    padding: 15px 20px;
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Центрируем содержимое футера */
+    justify-content: center;
     align-items: center;
-    flex-shrink: 0; /* Футер не будет сжиматься */
+    flex-shrink: 0;
 }
 
 .footer-content-wrapper {
     width: 100%;
-    max-width: 960px; /* Совпадает с .content-wrapper */
+    max-width: 960px;
     display: flex;
-    justify-content: space-between; /* Разносим элементы по краям */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Для адаптивности */
-    gap: 15px; /* Отступ между элементами при переносе */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
+/* ОБНОВЛЕНО: Размер текста копирайта */
 .footer-copyright p {
     color: var(--text-dark-gray);
-    font-size: 0.75em; /* Меньше, чем кнопка-ссылка */
-    white-space: nowrap; /* Не переносить текст */
-    margin: 0; /* Убираем стандартные отступы у параграфа */
+    font-size: 0.65em; /* УМЕНЬШЕНО для еще более мелкого текста */
+    white-space: nowrap;
+    margin: 0;
 }
 
-/* Объединяем иконки и кнопку в один блок */
 .footer-social-and-link {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    gap: 25px; /* Одинаковый отступ между всеми элементами в этом блоке */
+    gap: 25px; /* Сохраняем большой отступ */
 }
 
-.social-icon { /* Применяем стили напрямую к социальным иконкам */
-    color: var(--primary-purple); /* Цвет символа без фона */
-    font-size: 1.5em; /* Увеличили размер иконок */
+.social-icon {
+    color: var(--primary-purple);
+    font-size: 1.5em;
     text-decoration: none;
-    transition: color 0.3s ease; /* Плавный переход цвета */
+    transition: color 0.3s ease;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
 }
 
 .social-icon:hover {
-    color: var(--link-hover-color); /* Смена цвета при наведении */
+    color: var(--link-hover-color);
 }
 
 .teach-me-button {
-    background-color: transparent; /* Прозрачный фон */
-    color: var(--primary-purple); /* Цвет текста */
+    background-color: transparent;
+    color: var(--primary-purple);
     border: none;
     padding: 5px 10px;
-    font-size: 0.9em; /* Больше, чем копирайт */
+    font-size: 0.9em;
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Source Code Pro', monospace;
-    font-weight: 700; /* Жирный шрифт */
+    font-weight: 700;
     transition: color 0.3s ease;
     white-space: nowrap;
     text-decoration: none;
-    display: flex; /* Для выравнивания иконки и текста */
+    display: flex;
     align-items: center;
-    gap: 8px; /* Отступ между иконкой и текстом */
+    gap: 8px;
 }
 
 .teach-me-button i {
-    font-size: 1.2em; /* Размер иконки внутри кнопки */
-    color: inherit; /* Иконка наследует цвет от родителя */
+    font-size: 1.2em;
+    color: inherit;
 }
 
 .teach-me-button:hover {
-    color: var(--link-hover-color); /* Смена цвета при наведении */
+    color: var(--link-hover-color);
 }
 
 /* --- Адаптивность (Media Queries) --- */
 @media (max-width: 768px) {
     .hero-content {
-        flex-direction: column; /* Элементы в колонку на узких экранах */
+        flex-direction: column;
         text-align: center;
     }
 
     .hero-text-block {
-        order: 2; /* Текстовый блок после изображения */
+        order: 2;
         text-align: center;
-        min-width: unset; /* Сброс минимальной ширины */
-        max-width: 100%; /* Занимает всю ширину */
+        min-width: unset;
+        max-width: 100%;
+        padding-top: 0;
     }
 
     .main-text p {
-        text-align: center; /* Центрируем основной текст */
+        text-align: center;
     }
 
     .hero-buttons {
-        justify-content: center; /* Центрируем кнопки на мобильных */
+        justify-content: center; /* Центрирование кнопок на мобильных */
     }
 
     .hero-image-block {
-        order: 1; /* Изображение перед текстовым блоком */
-        max-width: 80%; /* Уменьшаем размер блока с изображением */
-        margin: 0 auto 30px; /* Центрируем и добавляем отступ снизу */
-        width: 100%; /* Занимает всю доступную ширину */
-        transform: translateX(0); /* Убираем сдвиг */
-        margin-top: 0; /* Убираем отрицательный margin-top */
+        order: 1;
+        max-width: 80%;
+        margin: 0 auto 30px;
+        width: 100%;
+        transform: translateX(0);
+        margin-top: 0;
+        right: 0;
     }
 
     .hero-image {
-        width: 100%; /* Изображение занимает 100% ширины своего блока */
+        width: 100%;
+        transform: none; /* УБРАН наклон на мобильных */
     }
 
     .greeting-image {
-        width: 70%; /* "Привет!" тоже центрируем */
+        width: 60%;
         margin: 0 auto 15px;
+        margin-left: auto;
+        transform: none; /* УБРАН наклон на мобильных */
     }
 
     .footer-content-wrapper {
-        flex-direction: column; /* Элементы футера в колонку */
+        flex-direction: column;
         gap: 15px;
     }
 
@@ -287,30 +304,30 @@ body {
 
     .footer-social-and-link {
         width: 100%;
-        justify-content: center; /* Центрируем социальные иконки и кнопку */
+        justify-content: center;
     }
 }
 
 /* Дополнительные медиа-запросы для очень маленьких экранов */
 @media (max-width: 480px) {
     body {
-        font-size: 16px; /* Уменьшим базовый размер шрифта для очень маленьких экранов */
+        font-size: 16px;
     }
     .hero-text-block {
-        padding: 0 10px; /* Немного отступа для текста */
+        padding: 0 10px;
     }
     .hero-image-block {
-        max-width: 95%; /* Уменьшаем размер блока с изображением */
+        max-width: 95%;
     }
     .hero-buttons {
-        flex-direction: column; /* Кнопки в колонку на самых маленьких экранах */
+        flex-direction: column;
     }
     .button {
-        width: 100%; /* Кнопки занимают всю ширину */
+        width: 100%;
         text-align: center;
     }
     .footer-social-and-link {
-        flex-direction: column; /* Элементы футера в колонку на очень маленьких */
-        gap: 10px; /* Меньший отступ */
+        flex-direction: column;
+        gap: 10px;
     }
 }
