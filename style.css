@@ -48,8 +48,8 @@ body {
 .hero-content {
     display: flex;
     align-items: center; /* Выравниваем по центру по вертикали весь контент в hero-content */
-    justify-content: space-between;
-    gap: 0px; /* Убираем gap на hero-content, чтобы лучше контролировать отступы */
+    justify-content: space-between; /* Разносим элементы по сторонам */
+    gap: 40px; /* ВОЗВРАЩАЕМ gap для стандартного отступа между блоками */
     flex-wrap: wrap;
 }
 
@@ -57,7 +57,8 @@ body {
     flex: 1; /* Позволяет текстовому блоку занимать доступное пространство */
     min-width: 380px; /* Минимальная ширина для текстового блока */
     max-width: 55%; /* Максимальная ширина для текстового блока */
-    /* padding-top: 0; */ /* Убрано, так как align-items: center выравнивает автоматически */
+    /* padding-top: 0; - Убрано, так как align-items: center выравнивает автоматически */
+    align-self: center; /* НОВОЕ: Центрируем этот блок по вертикали относительно родительского flex-контейнера */
 }
 
 /* ОБНОВЛЕНО: Картинка "Привет!" */
@@ -151,24 +152,25 @@ body {
 /* ОБНОВЛЕНО: Картинка "Клап-Клап" */
 .hero-image-block {
     flex-shrink: 0;
-    width: auto; /* Ширина подстроится под изображение */
+    /* width: auto; - УДАЛЕНО, чтобы flex-basis определял ширину */
+    flex-basis: 45%; /* НОВОЕ: Даем ему фиксированную пропорцию */
     display: flex;
     justify-content: flex-start; /* Выравниваем изображение в начале этого блока */
-    align-items: center;
+    align-items: center; /* Центрируем изображение по вертикали внутри блока */
     margin-top: 0;
     position: relative;
-    /* УБРАН: right: 0; - уже было убрано */
-    /* УБРАН: margin-left: auto; - этот отступ, который вы заметили */
     padding-right: 0;
+    /* background-color: rgba(0, 0, 255, 0.1); /* Временный фон для отладки */
 }
 
 .hero-image {
-    max-width: none;
+    max-width: none; /* НОВОЕ: Убираем max-width, чтобы не ограничивать размер */
     height: auto;
     display: block;
-    width: 100%; /* Изображение займет 100% ширины своего родителя */
+    width: 350px; /* НОВОЕ: Фиксированный размер для клап-клап, чтобы оно задавало высоту */
+    object-fit: contain; /* НОВОЕ: Убедимся, что изображение вписывается без обрезки */
     transform: none; /* Убран наклон */
-    margin-left: 50px; /* Точно 50px от левого края БЛОКА hero-image-block */
+    margin-left: 50px; /* Отступ 50px от левого края блока hero-image-block */
     margin-right: 0; /* Убираем отступ справа */
 }
 
@@ -262,7 +264,7 @@ body {
         text-align: center;
         min-width: unset;
         max-width: 100%;
-        /* padding-top: 0; - уже не нужно, align-items: center */
+        align-self: auto; /* Сбрасываем align-self для мобильных, чтобы он был по умолчанию */
     }
 
     .main-text p {
@@ -296,7 +298,6 @@ body {
     .greeting-image {
         width: 60%;
         margin: 0 auto 15px;
-        /* margin-left: auto; - уже не нужно */
         transform: none; /* УБРАН наклон на мобильных */
     }
 
