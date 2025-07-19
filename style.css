@@ -74,7 +74,7 @@ body {
 /* ОБНОВЛЕНО: Основной текст */
 .main-text p {
     font-size: 1em; /* Относительно font-size body */
-    text-align: left;
+    text-align: justify;
     margin-bottom: 5px; /* УМЕНЬШЕНО для еще большей плотности */
     line-height: 1.5; 
 }
@@ -106,7 +106,7 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 200%;
     height: 5px;
     z-index: -1;
     background-image: url('assets/underline.svg');
@@ -119,7 +119,7 @@ body {
 .hero-buttons {
     display: flex;
     justify-content: center; /* ЦЕНТРИРОВАНИЕ кнопок под текстом */
-    gap: 30px; /* УВЕЛИЧЕНО расстояние между кнопками */
+    gap: 70px; /* УВЕЛИЧЕНО расстояние между кнопками */
     margin-top: 30px; /* Отступ сверху от текста */
     flex-wrap: wrap; /* Для адаптивности */
 }
