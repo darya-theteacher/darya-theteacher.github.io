@@ -23,7 +23,7 @@ body {
     font-family: 'Source Code Pro', monospace;
     color: var(--text-dark-gray);
     background-color: #ffffff;
-    line-height: 1.5;
+    line-height: 1.6;
     display: flex; /* Делаем body flex-контейнером */
     flex-direction: column; /* Элементы будут располагаться по вертикали */
     min-height: 100vh; /* Занимает всю высоту видимой части экрана */
@@ -66,7 +66,7 @@ body {
     height: auto;
     display: block;
     margin-bottom: 25px;
-    width: 40%; /* УМЕНЬШЕНО для меньшего размера, как на макете */
+    width: 45%; /* УМЕНЬШЕНО для меньшего размера, как на макете */
     margin-left: 0; /* Без сдвига */
     transform: none; /* УБРАН наклон */
 }
@@ -74,7 +74,7 @@ body {
 /* ОБНОВЛЕНО: Основной текст */
 .main-text p {
     font-size: 1em; /* Относительно font-size body */
-    text-align: justify;
+    text-align: left;
     margin-bottom: 5px; /* УМЕНЬШЕНО для еще большей плотности */
     line-height: 1.5; 
 }
@@ -84,7 +84,7 @@ body {
 }
 
 .highlight-words {
-    font-weight: 700;
+    font-weight: 100;
     font-style: italic;
     color: var(--primary-pink);
     position: relative;
@@ -97,10 +97,10 @@ body {
 .highlight-words::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 200%;
-    height: 5px;
+    left: -5px;
+    bottom: -10px;
+    width: 105%;
+    height: 15px;
     z-index: -1;
     background-image: url('assets/underline.svg');
     background-repeat: no-repeat;
@@ -112,8 +112,8 @@ body {
 .hero-buttons {
     display: flex;
     justify-content: center; /* ЦЕНТРИРОВАНИЕ кнопок под текстом */
-    gap: 70px; /* УВЕЛИЧЕНО расстояние между кнопками */
-    margin-top: 30px; /* Отступ сверху от текста */
+    gap: 65px; /* УВЕЛИЧЕНО расстояние между кнопками */
+    margin-top: 35px; /* Отступ сверху от текста */
     flex-wrap: wrap; /* Для адаптивности */
 }
 
