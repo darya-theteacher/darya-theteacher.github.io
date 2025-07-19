@@ -170,7 +170,7 @@ body {
 .main-footer {
     background-color: var(--footer-bg-gray);
     width: 100%;
-    padding: 13px 20px;
+    padding: 15px 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -180,7 +180,7 @@ body {
 
 .footer-content-wrapper {
     width: 100%;
-    max-width: 1210px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -222,7 +222,7 @@ body {
     color: var(--primary-purple);
     border: none;
     padding: 5px 10px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     cursor: pointer;
     border-radius: 5px;
     font-family: 'Source Code Pro', monospace;
