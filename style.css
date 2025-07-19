@@ -34,15 +34,15 @@ body {
 .content-wrapper {
     max-width: 1200px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирует блок по горизонтали */
-    padding: 20px; /* Отступы по бокам */
+    padding: 60px 0px 40px 60px;
     box-sizing: border-box;
     flex-grow: 1; /* Позволяет контенту занимать все доступное вертикальное пространство */
 }
 
 /* --- Секция "Герой" (Hero Section) --- */
 .hero-section {
-    padding-top: 60px; /* Отступ сверху */
-    padding-bottom: 40px; /* Отступ снизу */
+    padding-top: 0px; /* Отступ сверху */
+    padding-bottom: 0px; /* Отступ снизу */
 }
 
 .hero-content {
