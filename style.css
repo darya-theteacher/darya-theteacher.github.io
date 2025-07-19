@@ -34,7 +34,7 @@ body {
 .content-wrapper {
     max-width: 1200px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирует блок по горизонтали */
-    padding: 60px 0px 40px 60px;
+    padding: 70px 0px 40px 70px;
     box-sizing: border-box;
     flex-grow: 1; /* Позволяет контенту занимать все доступное вертикальное пространство */
 }
@@ -81,13 +81,6 @@ body {
 
 .main-text p:first-child {
     margin-top: 0;
-}
-
-/* Стили для выделенного текста "useful, objective, and a little bit fun" */
-.highlight-text {
-    position: relative;
-    display: inline;
-    line-height: 1.5; /* Соответствует line-height параграфа */
 }
 
 .highlight-words {
