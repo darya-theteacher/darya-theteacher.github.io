@@ -41,8 +41,8 @@ body {
 
 /* --- Секция "Герой" (Hero Section) --- */
 .hero-section {
-    padding-top: 40px; /* Отступ сверху */
-    padding-bottom: 60px; /* Отступ снизу */
+    padding-top: 60px; /* Отступ сверху */
+    padding-bottom: 40px; /* Отступ снизу */
 }
 
 .hero-content {
@@ -66,7 +66,7 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 0;
+    margin-bottom: 25px;
     width: 40%; /* УМЕНЬШЕНО для меньшего размера, как на макете */
     margin-left: 0; /* Без сдвига */
     transform: none; /* УБРАН наклон */
@@ -167,7 +167,7 @@ body {
     max-width: none; /* НОВОЕ: Убираем max-width, чтобы не ограничивать размер */
     height: auto;
     display: block;
-    width: 350px; /* НОВОЕ: Фиксированный размер для клап-клап, чтобы оно задавало высоту */
+    width: 400px; /* НОВОЕ: Фиксированный размер для клап-клап, чтобы оно задавало высоту */
     object-fit: contain; /* НОВОЕ: Убедимся, что изображение вписывается без обрезки */
     transform: none; /* Убран наклон */
     margin-left: 50px; /* Отступ 50px от левого края блока hero-image-block */
