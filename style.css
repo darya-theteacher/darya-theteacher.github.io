@@ -76,7 +76,7 @@ body {
     font-size: 1em; /* Относительно font-size body */
     text-align: left;
     margin-bottom: 5px; /* УМЕНЬШЕНО для еще большей плотности */
-    line-height: 1; 
+    line-height: 1.5; 
 }
 
 .main-text p:first-child {
@@ -87,7 +87,7 @@ body {
 .highlight-text {
     position: relative;
     display: inline;
-    line-height: 1.3; /* Соответствует line-height параграфа */
+    line-height: 1.5; /* Соответствует line-height параграфа */
 }
 
 .highlight-words {
