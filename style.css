@@ -1,332 +1,317 @@
-/* Глобальные правила для удобства расчета размеров */
-html {
-    box-sizing: border-box;
-}
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
-/* Подключение шрифта Source Code Pro */
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
-
+/* Общие стили */
 :root {
-    /* Определение переменных для цветов для легкой смены */
-    --primary-pink: #ff99cc; /* Основной розовый цвет */
-    --primary-purple: #644fc1; /* Основной фиолетовый/пурпурный цвет */
-    --text-dark-gray: #4c4c4f; /* Темно-серый для основного текста */
-    --footer-bg-gray: #f1f1f1; /* Светло-серый для фона футера (обновлено) */
-    --link-hover-color: #ff99cc; /* Цвет ссылок/кнопок при наведении */
+    --primary-pink: #ff99cc; /* Основной розовый */
+    --light-pink: #ffdaeb;   /* Второй розовый */
+    --dark-purple: #644fc1;   /* Фиолетовый */
+    --accent-red: #b90043;   /* Тёмно-красный */
+    --text-color-dark: #4c4c4f; /* Тёмно-серый для основного текста */
+    --light-grey: #f1f1f1;   /* Светло-серый */
 }
 
 body {
-    margin: 0;
     font-family: 'Source Code Pro', monospace;
-    color: var(--text-dark-gray);
-    background-color: #ffffff;
     line-height: 1.6;
-    display: flex; /* Делаем body flex-контейнером */
-    flex-direction: column; /* Элементы будут располагаться по вертикали */
-    min-height: 100vh; /* Занимает всю высоту видимой части экрана */
-    font-size: 16px; /* Базовый размер шрифта для всего body */
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Фон страницы - белый */
 }
 
-/* --- Общий контейнер для центрирования контента --- */
 .content-wrapper {
-    max-width: 1200px; /* Максимальная ширина контента */
-    margin: 0 auto; /* Центрирует блок по горизонтали */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 80px 0px 50px 70px;
-    box-sizing: border-box;
-    flex-grow: 1; /* Позволяет контенту занимать все доступное вертикальное пространство */
-}
-
-/* --- Секция "Герой" (Hero Section) --- */
-.hero-section {
-    padding-top: 0px; /* Отступ сверху */
-    padding-bottom: 0px; /* Отступ снизу */
-}
-
-.hero-content {
+    flex-grow: 1;
     display: flex;
-    align-items: center; /* Выравниваем по центру по вертикали весь контент в hero-content */
-    justify-content: space-between; /* Разносим элементы по сторонам */
-    gap: 40px; /* ВОЗВРАЩАЕМ gap для стандартного отступа между блоками */
-    flex-wrap: wrap;
-}
-
-.hero-text-block {
-    flex: 1; /* Позволяет текстовому блоку занимать доступное пространство */
-    min-width: 380px; /* Минимальная ширина для текстового блока */
-    max-width: 50%; /* Максимальная ширина для текстового блока */
-    align-self: center; /* НОВОЕ: Центрируем этот блок по вертикали относительно родительского flex-контейнера */
-}
-
-/* ОБНОВЛЕНО: Картинка "Привет!" */
-.greeting-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 25px;
-    width: 45%; /* УМЕНЬШЕНО для меньшего размера, как на макете */
-    margin-left: 0; /* Без сдвига */
-    transform: none; /* УБРАН наклон */
-}
-
-/* ОБНОВЛЕНО: Основной текст */
-.main-text p {
-    font-size: 1em; /* Относительно font-size body */
-    text-align: left;
-    margin-bottom: 5px; /* УМЕНЬШЕНО для еще большей плотности */
-    line-height: 1.5; 
-}
-
-.main-text p:first-child {
-    margin-top: 0;
-}
-
-.highlight-words {
-    font-weight: 100;
-    font-style: italic;
-    color: var(--primary-pink);
-    position: relative;
-    padding-bottom: 3px;
-    display: inline-block;
-    z-index: 1;
-}
-
-/* ОБНОВЛЕНО: Волнистое подчеркивание */
-.highlight-words::after {
-    content: '';
-    position: absolute;
-    left: -5px;
-    bottom: -10px;
-    width: 105%;
-    height: 15px;
-    z-index: -1;
-    background-image: url('assets/underline.svg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: bottom;
-}
-
-/* ОБНОВЛЕНО: Расположение кнопок */
-.hero-buttons {
-    display: flex;
-    justify-content: center; /* ЦЕНТРИРОВАНИЕ кнопок под текстом */
-    gap: 65px; /* УВЕЛИЧЕНО расстояние между кнопками */
-    margin-top: 35px; /* Отступ сверху от текста */
-    flex-wrap: wrap; /* Для адаптивности */
-}
-
-/* ОБНОВЛЕНО: Размер кнопок */
-.button {
-    background-color: var(--primary-pink);
-    color: #ffffff;
-    border: none;
-    padding: 7px 16px; /* УМЕНЬШЕНО padding для компактности */
-    font-size: 0.85em; /* УМЕНЬШЕНО размер шрифта на кнопках */
-    cursor: pointer;
-    border-radius: 8px; /* УМЕНЬШЕНО скругление */
-    font-family: 'Source Code Pro', monospace;
-    font-weight: normal;
-    text-transform: lowercase;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
-    text-decoration: none;
-    display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+a {
+    color: var(--primary-pink);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Стили кнопок */
+.hero-buttons {
+    display: flex;
+    gap: 65px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: var(--primary-pink);
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
 }
 
 .button:hover {
-    background-color: var(--primary-purple);
+    background-color: var(--light-pink); /* Используем второй розовый при наведении */
+    text-decoration: none;
 }
 
-/* ОБНОВЛЕНО: Картинка "Клап-Клап" */
-.hero-image-block {
-    flex-shrink: 0;
-    /* width: auto; - УДАЛЕНО, чтобы flex-basis определял ширину */
-    flex-basis: 45%; /* НОВОЕ: Даем ему фиксированную пропорцию */
+/* Стили для новой главной страницы */
+.main-page-content {
     display: flex;
-    justify-content: flex-start; /* Выравниваем изображение в начале этого блока */
-    align-items: center; /* Центрируем изображение по вертикали внутри блока */
-    margin-top: 0;
-    position: relative;
-    padding-right: 0;
-    /* background-color: rgba(0, 0, 255, 0.1); /* Временный фон для отладки */
-}
-
-.hero-image {
-    max-width: none; /* НОВОЕ: Убираем max-width, чтобы не ограничивать размер */
-    height: auto;
-    display: block;
-    width: 400px; /* НОВОЕ: Фиксированный размер для клап-клап, чтобы оно задавало высоту */
-    object-fit: contain; /* НОВОЕ: Убедимся, что изображение вписывается без обрезки */
-    transform: none; /* Убран наклон */
-    margin-left: 40px; /* Отступ 50px от левого края блока hero-image-block */
-    margin-right: 0; /* Убираем отступ справа */
-}
-
-/* --- Футер (Footer) --- */
-.main-footer {
-    background-color: var(--footer-bg-gray);
-    width: 100%;
-    padding: 15px 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding-top: 50px;
 }
 
-.footer-content-wrapper {
+/* Заголовок Russian Placement Test */
+.main-title-block {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.main-heading {
+    font-size: 4em;
+    color: var(--text-color-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.main-title-underline {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Блок графика прогресса */
+.progress-chart-block {
+    position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
+    height: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    margin-bottom: 50px;
 }
 
-/* ОБНОВЛЕНО: Размер текста копирайта */
-.footer-copyright p {
-    color: var(--text-dark-gray);
-    font-size: 0.65em; /* УМЕНЬШЕНО для еще более мелкого текста */
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.level-point {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-pink);
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-point.a1 { left: 5%; }
+.level-point.a2 { left: 35%; }
+.level-point.b1 { left: 65%; }
+.level-point.b2 { left: 95%; }
+
+
+.level-text {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color-dark);
+    font-weight: bold;
+    font-size: 0.9em;
     white-space: nowrap;
+}
+
+.current-level-indicator {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-30%, -60%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hand-marker-image {
+    width: 120px;
+    height: auto;
+}
+
+.you-are-here-bubble {
+    background-color: var(--dark-purple);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Футер */
+.main-footer {
+    width: 100%;
+    background-color: var(--light-grey);
+    color: var(--text-color-dark);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #eee; /* Можно заменить на var(--light-grey) или оставить */
+    margin-top: auto;
+}
+
+.footer-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    flex-wrap: wrap;
+}
+
+.footer-copyright p {
     margin: 0;
+    font-size: 0.85em;
 }
 
 .footer-social-and-link {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
-    gap: 25px; /* Сохраняем большой отступ */
+    gap: 15px;
 }
 
 .social-icon {
-    color: var(--primary-purple);
-    font-size: 1.5em;
-    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--dark-purple);
     transition: color 0.3s ease;
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0;
 }
 
 .social-icon:hover {
-    color: var(--link-hover-color);
+    color: var(--primary-pink);
 }
 
 .teach-me-button {
-    background-color: transparent;
-    color: var(--primary-purple);
-    border: none;
-    padding: 5px 10px;
-    font-size: 0.9em;
-    cursor: pointer;
-    border-radius: 5px;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 700;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
-}
-
-.teach-me-button i {
-    font-size: 1.2em;
-    color: inherit;
+    background-color: var(--dark-purple);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
 }
 
 .teach-me-button:hover {
-    color: var(--link-hover-color);
+    background-color: var(--primary-pink);
 }
 
-/* --- Адаптивность (Media Queries) --- */
+.teach-me-button i {
+    font-size: 1em;
+}
+
+
+/* Медиа-запросы для адаптивности */
 @media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
+    .content-wrapper {
+        padding: 60px 20px 30px 20px;
     }
 
-    .hero-text-block {
-        order: 2;
-        text-align: center;
-        min-width: unset;
-        max-width: 100%;
-        align-self: auto; /* Сбрасываем align-self для мобильных, чтобы он был по умолчанию */
+    .main-heading {
+        font-size: 3em;
     }
 
-    .main-text p {
-        text-align: center;
+    .main-title-underline {
+        width: 120%;
     }
 
     .hero-buttons {
-        justify-content: center; /* Центрирование кнопок на мобильных */
+        flex-direction: column;
+        gap: 20px;
     }
 
-    /* ОБНОВЛЕНО: Корректные стили для "Клап-Клап" на мобильных */
-    .hero-image-block {
-        order: 1; /* Чтобы изображение было над текстом на мобильных */
-        max-width: 80%; /* Ограничиваем ширину контейнера */
-        margin: 0 auto 30px; /* Центрируем и добавляем отступ снизу */
-        width: 100%; /* Занимает всю ширину на маленьких экранах */
-        transform: translateX(0); /* Убираем любые смещения */
-        right: 0; /* Убираем позиционирование */
-        justify-content: center; /* Центрируем изображение внутри блока */
-        padding-right: 0; /* Убираем padding */
+    .button {
+        width: 80%;
+        max-width: 300px;
     }
 
-    .hero-image {
-        width: 100%; /* Изображение занимает всю ширину своего блока */
-        max-width: 100%; /* Убедимся, что не выходит за пределы */
-        transform: none; /* Убран наклон */
-        margin-left: 0; /* Убираем 50px отступ для мобильных, чтобы не было смещения */
-        margin-right: 0; /* Убираем отступ справа */
+    .progress-chart-block {
+        height: 200px;
     }
 
-    .greeting-image {
-        width: 60%;
-        margin: 0 auto 15px;
-        transform: none; /* УБРАН наклон на мобильных */
+    .level-point {
+        width: 15px;
+        height: 15px;
+    }
+
+    .level-text {
+        font-size: 0.8em;
+        top: -20px;
+    }
+
+    .hand-marker-image {
+        width: 90px;
+    }
+
+    .you-are-here-bubble {
+        padding: 6px 10px;
+        font-size: 0.8em;
     }
 
     .footer-content-wrapper {
         flex-direction: column;
         gap: 15px;
-    }
-
-    .footer-copyright p {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-social-and-link {
-        width: 100%;
-        justify-content: center;
+        padding: 0 20px;
     }
 }
 
-/* Дополнительные медиа-запросы для очень маленьких экранов */
 @media (max-width: 480px) {
-    body {
-        font-size: 16px;
+    .main-heading {
+        font-size: 2.5em;
     }
-    .hero-text-block {
-        padding: 0 10px;
+
+    .main-title-underline {
+        width: 130%;
     }
-    /* hero-image-block и hero-image уже скорректированы в 768px медиа-запросе */
-    .hero-buttons {
-        flex-direction: column;
+
+    .progress-chart-block {
+        height: 150px;
     }
-    .button {
-        width: 100%;
-        text-align: center;
-    }
-    .footer-social-and-link {
-        flex-direction: column;
-        gap: 10px;
+
+    .hand-marker-image {
+        width: 70px;
     }
 }
